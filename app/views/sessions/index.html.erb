@@ -1,0 +1,79 @@
+<div class="jumbotron">
+	<h1 id="title"><strong>Job Submission Database Web App</strong></h1>
+</div>
+<div class="container">
+	<div class="col-xs-12 reg_log">
+		<div class="col-xs-6">
+			<h2 class="form-signin-heading">Register</h2>
+			<form action="sessions/register" method="post">
+				<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+				<div class="form-group row">
+					<label for="example-text-input" class="col-xs-2 col-form-label">First Name</label>
+					<div class="col-xs-6">
+						<input class="form-control" type="text" name="user[first_name]">
+					</div>	
+				</div>
+				<div class="form-group row">
+					<label for="example-text-input" class="col-xs-2 col-form-label">Last Name:</label>
+					<div class="col-xs-6">
+						<input class="form-control" type="text" name="user[last_name]">
+					</div>	
+				</div>
+				<div class="form-group row">
+					<label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
+					<div class="col-xs-6">
+						<input class="form-control" type="email" name="user[email]">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
+					<div class="col-xs-6">
+						<input class="form-control" type="password" name="user[password]">
+						<small class="form-text text-muted">At least 8 characters</small>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="example-password-input" class="col-xs-2 col-form-label">Retype Password</label>
+					<div class="col-xs-6">
+						<input class="form-control" type="password" name="user[password_confirmation]">
+					</div>
+				</div>
+				<div class="col-md-7"></div>
+				<button type="submit" class="btn btn-primary">Register</button>
+			</form>
+		</div>
+		<div class="col-xs-6">
+			<h2 class="form-signin-heading">Login</h2>
+			<form action="sessions/login" method="post">
+			<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+				<div class="form-group row">
+					<label for="example-email-input" class="col-xs-2 col-form-label login">Email</label>
+					<div class="col-xs-6">
+						<input class="form-control" type="email" name="email">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="example-password-input" class="col-xs-2 col-form-label login">Password</label>
+					<div class="col-xs-6">
+						<input class="form-control" type="password" name="password">
+					</div>
+				</div>
+				<div class="col-md-7" id="login"></div>
+				<button type="submit" class="btn btn-primary">Login</button>
+			</form>
+		</div>
+	</div>
+	<% if flash[:errors]%>
+	<% flash[:errors].each do |m|%>
+	<div class="col-xs-4 alert alert-danger">
+		<%= m %>
+	</div>
+	<div class="col-xs-8"></div>
+	<% end %>
+	<% end %>
+
+	
+
+
+
+</div>

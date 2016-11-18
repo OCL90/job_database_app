@@ -1,0 +1,46 @@
+<div class="container">
+	<div class="head">
+		<div class="col-xs-9"></div>
+		<form class="col-xs-3" action="/logout" method="post">
+			<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+			<button type="submit" class="btn btn-danger">Logout</button>
+		</form>
+	</div>
+</div>
+
+<div class="container">
+	<h2>Welcome, <%=@user.first_name%>!</h2>
+	
+	<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">Add New Job Application</button>
+
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">New Job Application</h4>
+				</div>
+				<div class="modal-body">
+					<form action="/application/create" method="post">
+						<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+						<div class="form-inline">
+							<div class="col-xs-6 form-group">
+								<label for="exampleInputName2">Company Name</label>
+								<input type="text" class="form-control" id="one">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail2">Job Title</label>
+								<input type="text" class="form-control" id="two">
+							</div>
+						</div>
+						
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+LOG:  database system was shut down at 2016-08-25 21:48:16 CDT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "job_app_database_development" does not exist
+FATAL:  database "job_app_database_development" does not exist
+ERROR:  database "job_app_database_development" already exists
+STATEMENT:  CREATE DATABASE "job_app_database_development" ENCODING = 'unicode'
+ERROR:  database "job_app_database_test" already exists
+STATEMENT:  CREATE DATABASE "job_app_database_test" ENCODING = 'unicode'
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
